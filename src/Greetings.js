@@ -25,7 +25,7 @@ export default class App extends Component {
 
   // Rendu
   render () {
-    let {message} = this.state;
+    let { message } = this.state;
 
     return (
       <div>
