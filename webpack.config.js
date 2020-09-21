@@ -1,6 +1,6 @@
 const {resolve} = require('path')
 const webpack = require('webpack')
-const dotE = require('dotenv').config().parsed;
+require('dotenv').config()
 
 module.exports = env => {
   return {
@@ -29,9 +29,7 @@ module.exports = env => {
       ]
     },
     plugins: [
-      new webpack.DefinePlugin(
-        process.env.API_URL = JSON.stringify(dotE["API_URL"])
-      )
+      new webpack.DefinePlugin(process.env.API_URL)
     ]
   }
 }
