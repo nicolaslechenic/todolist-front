@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "watch": "webpack --env.WEBPACK_MODE=development --env.WEBPACK_WATCH=true",
+    "netlify": "webpack --env.WEBPACK_MODE=production --env.WEBPACK_WATCH=false",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
