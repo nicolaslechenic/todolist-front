@@ -1,12 +1,6 @@
 const {resolve} = require('path')
 const webpack = require('webpack')
-const Dotenv = require('dotenv-webpack')
-const env = require('dotenv').config().parsed;
-
-const envKeys = Object.keys(env).reduce((prev, next) => {
-  prev[`process.env.${next}`] = JSON.stringify(env[next]);
-  return prev;
-}, {});
+const dotE = require('dotenv').config().parsed;
 
 module.exports = env => {
   return {
@@ -35,8 +29,9 @@ module.exports = env => {
       ]
     },
     plugins: [
-      new Dotenv(),
-      new webpack.DefinePlugin(envKeys)
+      new webpack.DefinePlugin(
+        process.env.API_URL = JSON.stringify(dotE["API_URL"])
+      )
     ]
   }
 }

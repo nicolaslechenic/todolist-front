@@ -19,7 +19,6 @@
     "dotenv-webpack": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.3",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   }
