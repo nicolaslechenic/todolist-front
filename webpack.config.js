@@ -1,7 +1,12 @@
 const {resolve} = require('path')
 const webpack = require('webpack')
 const Dotenv = require('dotenv-webpack')
-require('dotenv').config()
+const env = require('dotenv').config().parsed;
+
+const envKeys = Object.keys(env).reduce((prev, next) => {
+  prev[`process.env.${next}`] = JSON.stringify(env[next]);
+  return prev;
+}, {});
 
 module.exports = env => {
   return {
@@ -30,7 +35,8 @@ module.exports = env => {
       ]
     },
     plugins: [
-      new Dotenv()
+      new Dotenv(),
+      new webpack.DefinePlugin(envKeys)
     ]
   }
 }
