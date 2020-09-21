@@ -1,5 +1,5 @@
-const {resolve} = require('path')
-const DotenvWebpackPlugin = require('dotenv-webpack');
+const { resolve } = require('path')
+const Dotenv = require("dotenv-webpack")
 
 module.exports = env => {
   return {
@@ -27,8 +27,8 @@ module.exports = env => {
         }
       ]
     },
-    plugins: [
-      new DotenvWebpackPlugin()
+    plugins:  [
+      new Dotenv({path: `./.env.${env.WEBPACK_MODE}`})
     ]
   }
 }
