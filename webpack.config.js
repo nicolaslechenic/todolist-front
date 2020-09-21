@@ -1,6 +1,5 @@
 const {resolve} = require('path')
-const webpack = require('webpack')
-require('dotenv').config()
+const DotenvWebpackPlugin = require('dotenv-webpack');
 
 module.exports = env => {
   return {
@@ -29,7 +28,7 @@ module.exports = env => {
       ]
     },
     plugins: [
-      new webpack.DefinePlugin(process.env.API_URL)
+      new DotenvWebpackPlugin()
     ]
   }
 }
