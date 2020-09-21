@@ -6,6 +6,8 @@ export default class App extends Component {
   constructor() {
     super();
 
+    console.log(process.env.API_URL);
+
     // Etat
     this.state = {
       message: null
